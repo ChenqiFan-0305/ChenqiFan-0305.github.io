@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="article1">
+    {{article1.display | safe}}
+    </div>
+
+<div class="article2">
+    {{article2.display | safe}}
+    </div>
+    
+  </div>
+{% endblock %}
+
+<div>
+    <form method = 'POST' target = {{next_url}}>
+        {% csrf_token %}
+        
+    {{ form.as_p }}
+        <br>
+        <input type='submit' name='Submit'>
+    </form>
+</div>
+
+<!-- {% block count %}
+<div class="next_button">
+    <label> Next </label>
+    <a href="{{next_url}}" class="button">Next</a>
+</div>
+{% endblock %} -->
